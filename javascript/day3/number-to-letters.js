@@ -5,7 +5,94 @@ function numberToLetters(num) {
 
   let str = "";
 
+  switch (num) {
+    case 0:
+      return "zéro";
+      break;
+    case 1:
+      return "un";
+      break;
+    case 2:
+      return "deux";
+      break;
+    case 3:
+      return "trois";
+      break;
+    case 4:
+      return "quatre";
+      break;
+    case 5:
+      return "cinq";
+      break;
+    case 6:
+      return "six";
+      break;
+    case 7:
+      return "sept";
+      break;
+    case 8:
+      return "huit";
+      break;
+    case 9:
+      return "neuf";
+      break;
+    case 10:
+      return "dix";
+      break;
+    case 11:
+      return "onze";
+      break;
+    case 12:
+      return "douze";
+      break;
+    case 13:
+      return "treize";
+      break;
+    case 14:
+      return "quatorze";
+      break;
+    case 15:
+      return "quinze";
+      break;
+    case 16:
+      return "seize";
+      break;
+    case 20:
+      return "vingt";
+      break;
+    case 30:
+      return "trente";
+      break;
+    case 40:
+      return "quarante";
+      break;
+    case 50:
+      return "cinquante";
+      break;
+    case 60:
+      return "soixante";
+      break;
+    case 100:
+      return "cent";
+      break;
+    case 1000:
+      return "mille";
+      break;
+    default:
+      if (condition) {
+        // 53 = 50 + 3 => cinquante-trois
+      }
+      break;
+  }
+
   return str;
 }
 
-console.log(numberToLetters(15));
+// let num2 = 5130;
+// console.log(Math.log(num));
+
+// console.log(numberToLetters(2));
+
+let findNum = 22;
+let num = String.fromCharCode(97 + findNum);
+console.log(num);
