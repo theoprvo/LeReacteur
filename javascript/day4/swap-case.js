@@ -105,16 +105,16 @@ function swapCasev(str) {
 function swapCasev2(tab) {
   let resultTab = [];
   for (let index = 0; index < tab.length; index++) {
-    let str = "";
-    for (let j = 0; j <= tab[index].length; j++) {
-      if (tab[index].charAt(j) === tab[index].charAt(j).toLowerCase()) {
-        str += tab[index].charAt(j).toUpperCase();
-      } else if (tab[index].charAt(j) === tab[index].charAt(j).toUpperCase()) {
-        str += tab[index].charAt(j).toLowerCase();
-      } else {
-        str += tab[index].charAt(j);
-      }
-    }
+    let str = swapCasev(tab[index]);
+    // for (let j = 0; j <= tab[index].length; j++) {
+    //   if (tab[index].charAt(j) === tab[index].charAt(j).toLowerCase()) {
+    //     str += tab[index].charAt(j).toUpperCase();
+    //   } else if (tab[index].charAt(j) === tab[index].charAt(j).toUpperCase()) {
+    //     str += tab[index].charAt(j).toLowerCase();
+    //   } else {
+    //     str += tab[index].charAt(j);
+    //   }
+    // }
     resultTab.push(str);
   }
   return resultTab;
