@@ -80,7 +80,7 @@ function numberToLetters(num) {
       break;
     default:
       if (condition) {
-        // 53 = 50 + 3 => cinquante-trois
+        //
       }
       break;
   }
@@ -88,11 +88,5 @@ function numberToLetters(num) {
   return str;
 }
 
-// let num2 = 5130;
-// console.log(Math.log(num));
-
-// console.log(numberToLetters(2));
-
-let findNum = 22;
-let num = String.fromCharCode(97 + findNum);
-console.log(num);
+console.log(37 % 10);
+console.log(Math.floor(37 / 10));
