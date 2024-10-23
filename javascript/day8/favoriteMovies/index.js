@@ -1,31 +1,29 @@
 const axios = require("axios");
 
-const apiKey = "b6ba662d";
-const paramString = "tt0468569";
+function searchFavoriteFilm(str, apiKey) {
+  //faire les tests pour les params en entree
 
-// searchFilm;
+  axios
+    .get("https://www.omdbapi.com/?t=" + str + "&apikey=" + apiKey)
+    .then((response) => {
+      let dataResult = response.data;
+      const movieKeys = Object.keys(dataResult);
 
-axios
-  .get("https://www.omdbapi.com/?t=" + "Inception" + "&apikey=" + apiKey)
-  .then((response) => {
-    let dataResult = response.data;
-
-    const movieKeys = Object.keys(dataResult);
-    // console.log(movieKeys);
-
-    for (let i = 0; i < movieKeys.length; i++) {
-      if (
-        movieKeys[i] === "Actors" ||
-        movieKeys[i] === "Title" ||
-        movieKeys[i] === "Year" ||
-        movieKeys[i] === "Genre"
-      ) {
-        // console.log(movieKeys[i]);
-        // console.log(dataResult[movieKeys[i]]);
-        console.log(movieKeys[i] + " : " + dataResult[movieKeys[i]]);
+      for (let i = 0; i < movieKeys.length; i++) {
+        if (
+          movieKeys[i] === "Actors" ||
+          movieKeys[i] === "Title" ||
+          movieKeys[i] === "Year" ||
+          movieKeys[i] === "Genre"
+        ) {
+          console.log(movieKeys[i] + " : " + dataResult[movieKeys[i]]);
+        }
       }
-    }
-  })
-  .catch((error) => {
-    console.log(error.message); // Affichera d'éventuelles erreurs, notamment en cas de problème de connexion Internet.
-  });
+    })
+    .catch((error) => {
+      console.log(error.message); // Affichera d'éventuelles erreurs, notamment en cas de problème de connexion Internet.
+    });
+}
+
+searchFavoriteFilm("The Batman", "b6ba662d");
+searchFavoriteFilm("Inception", "b6ba662d");
