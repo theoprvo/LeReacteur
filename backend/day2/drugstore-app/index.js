@@ -42,15 +42,20 @@ app.get("/drugs", async function (req, res) {
 
 app.put("/drugs/add/:id", async function (req, res) {
   try {
-    const ToAdd = req.body;
-    const drugId = req.params;
+    const ToAdd = req.body.quantity;
+    const drugId = req.params.id;
 
-    const X = Drug.findById(drugId);
+    console.log(typeof ToAdd, ToAdd);
+    console.log(typeof drugId, drugId);
+
+    const X = await Drug.findById(drugId);
     X.quantity = X.quantity + ToAdd;
-    await X.save;
+    await X.save();
 
     res.status(200).json(X);
-  } catch (error) {}
+  } catch (error) {
+    // console.log(error);
+  }
 });
 
 app.listen(3000, function (req, res) {
