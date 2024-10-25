@@ -12,20 +12,34 @@ app.get("/", function (req, res) {
 app.get("/send-a-color", function (req, res) {
   let colorName = req.query.color;
 
-  for (let i = 0; i < keys.length; i++) {
-    if (colorName === keys[i]) {
-      return res.json({
-        message:
-          "Le code hexadécimal de la couleur '" +
-          colorName +
-          "' est : " +
-          color_tab[keys[i]],
-      });
-    }
+  if (color_tab[colorName]) {
+    return res.json({
+      message:
+        "Le code hexadécimal de la couleur '" +
+        colorName +
+        "' est : " +
+        color_tab[keys[i]],
+    });
+  } else {
+    return res.json({
+      message: "color not found",
+    });
   }
-  return res.json({
-    message: "color not found",
-  });
+
+  //   for (let i = 0; i < keys.length; i++) {
+  //     if (colorName === keys[i]) {
+  //       return res.json({
+  //         message:
+  //           "Le code hexadécimal de la couleur '" +
+  //           colorName +
+  //           "' est : " +
+  //           color_tab[keys[i]],
+  //       });
+  //     }
+  //   }
+  //   return res.json({
+  //     message: "color not found",
+  //   });
 });
 
 app.listen(3000, function () {
