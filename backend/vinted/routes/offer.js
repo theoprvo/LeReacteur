@@ -20,26 +20,34 @@ router.post(
   fileUpload(),
   async function (req, res) {
     try {
-      const convertedPicture = await cloudinary.uploader.upload(
-        convertToBase64(req.files.picture)
-      );
+      const { title, description, price, brand, size, condition, color, city } =
+        req.body;
 
       const newOffer = Offer({
-        product_name: req.body.title,
-        product_description: req.body.description,
-        product_price: req.body.price,
+        product_name: title,
+        product_description: description,
+        product_price: price,
         product_details: [
-          { brand: req.body.brand },
-          { size: req.body.size },
-          { condition: req.body.condition },
-          { color: req.body.color },
-          { city: req.body.city },
+          { brand: brand },
+          { size: size },
+          { condition: condition },
+          { color: color },
+          { city: city },
         ],
-        product_image: convertedPicture,
         owner: req.user,
       });
-      await newOffer.save();
 
+      const convertedPicture = await cloudinary.uploader.upload(
+        convertToBase64(req.files.picture),
+        {
+          folder: `/vinted/offers/${newOffer._id}`,
+          public_id: "picture_name",
+        }
+      );
+
+      newOffer.product_image = convertedPicture;
+
+      await newOffer.save();
       res.status(200).json("ok");
     } catch (error) {
       res.status(400).json({

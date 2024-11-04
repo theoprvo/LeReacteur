@@ -8,9 +8,9 @@ const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost:27017/vinted");
 const cloudinary = require("cloudinary").v2;
 cloudinary.config({
-  cloud_name: "X",
-  api_key: "X",
-  api_secret: "lkAA53_-X",
+  cloud_name: "x",
+  api_key: "x",
+  api_secret: "x-x",
 });
 
 // ROUTES
