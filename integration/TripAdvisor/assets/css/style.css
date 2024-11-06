@@ -1,0 +1,37 @@
+body {
+  font-family: TS-Reg, sans-serif;
+}
+
+header {
+  border: solid 1px red;
+  max-width: 1135px;
+  height: 60px;
+  padding: 0 20px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  div {
+    width: 100%;
+
+    .ta-logo {
+      width: 190px;
+      height: auto;
+    }
+
+    ul {
+      display: flex;
+      justify-content: end;
+      li {
+        margin: 0 10px;
+      }
+    }
+  }
+}
+
+.main {
+  max-width: 1135px;
+  padding: 0 20px;
+  height: 50vh;
+  margin: auto;
+  background-color: rgba(255, 10, 10, 0.5);
+}
