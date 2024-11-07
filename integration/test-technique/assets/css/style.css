@@ -1,0 +1,115 @@
+body {
+  font-family: "Kanit", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  background-color: #5948ca;
+}
+
+header {
+  height: 100px;
+  background-color: white;
+  display: flex;
+  .menu {
+    display: flex;
+    align-items: center;
+    width: 1024px;
+    margin: auto;
+    div {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      img {
+        width: auto;
+        height: 80px;
+        border-radius: 50%;
+        margin-right: 16px;
+      }
+      a {
+        font-size: 26px;
+        text-decoration: none;
+        color: black;
+      }
+    }
+    ul {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      li {
+        margin: 0 16px;
+        padding: 12px;
+        border-radius: 12px;
+        a {
+          color: black;
+          text-decoration: none;
+        }
+        a:hover {
+          cursor: pointer;
+        }
+      }
+      li:hover {
+        background-color: black;
+        transition-property: background-color;
+        transition-duration: 1s;
+        a {
+          color: white;
+          transition-property: color;
+          transition-duration: 1s;
+        }
+      }
+      li:nth-child(3) {
+        background-color: black;
+        a {
+          color: white;
+        }
+      }
+      li:nth-child(3):hover {
+        background-color: none;
+        border: black solid 1px;
+        transition-property: background-color;
+        transition-duration: 1s;
+        a {
+          color: black;
+          transition-property: color;
+          transition-duration: 1s;
+        }
+      }
+    }
+  }
+}
+
+main {
+  width: 1024px;
+  margin: auto;
+  padding: 32px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  margin-top: 100px;
+  background-color: white;
+
+  img {
+    max-width: 500px;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin: 0 32px;
+    h2 {
+      font-size: 32px;
+    }
+    p {
+      margin-top: 16px;
+      font-weight: 400;
+    }
+  }
+}
+
+footer {
+  width: 1024px;
+  margin: auto;
+  width: 1024px;
+  margin-top: 100px;
+  display: flex;
+  justify-content: end;
+}
