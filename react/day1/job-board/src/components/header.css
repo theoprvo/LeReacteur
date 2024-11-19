@@ -1,0 +1,11 @@
+header {
+  background-color: rgb(45, 16, 6);
+  padding: 20px 0;
+  text-align: center;
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}

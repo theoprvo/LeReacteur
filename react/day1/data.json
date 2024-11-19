@@ -1,0 +1,73 @@
+[
+  {
+    "contractType": "CDI",
+    "country": "France",
+    "city": "Toulouse",
+    "className": "red",
+    "id": 1
+  },
+  {
+    "title": "Développeur Web",
+    "contractType": "CDI",
+    "country": "France",
+    "city": "Paris",
+    "className": "yellow",
+    "id": 2
+  },
+  {
+    "title": "Développeur full-stack",
+    "contractType": "CDI",
+    "country": "France",
+    "city": "Paris",
+    "className": "green",
+    "id": 3
+  },
+  {
+    "title": "Développeur mobile",
+    "contractType": "CDI",
+    "country": "France",
+    "city": "Paris",
+    "className": "pink",
+    "id": 4
+  },
+  {
+    "title": "Jardinier",
+    "contractType": "CDI",
+    "country": "France",
+    "city": "Paris",
+    "className": "blue",
+    "id": 5
+  },
+  {
+    "title": "Ouvrier",
+    "contractType": "CDI",
+    "country": "France",
+    "city": "Paris",
+    "className": "red",
+    "id": 6
+  },
+  {
+    "title": "Médecin",
+    "contractType": "CDI",
+    "country": "France",
+    "city": "Paris",
+    "className": "yellow",
+    "id": 7
+  },
+  {
+    "title": "Taxidermiste",
+    "contractType": "CDI",
+    "country": "France",
+    "city": "Paris",
+    "className": "green",
+    "id": 8
+  },
+  {
+    "title": "Flutiste",
+    "contractType": "CDI",
+    "country": "France",
+    "city": "Paris",
+    "className": "pink",
+    "id": 9
+  }
+]

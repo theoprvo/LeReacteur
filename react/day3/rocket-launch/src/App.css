@@ -1,0 +1,29 @@
+button {
+  background-color: lightblue;
+  margin: 10px;
+}
+
+.col {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.col-btn {
+  button {
+    cursor: pointer;
+    border: solid 1px;
+  }
+}
+
+.col-msg {
+}
+
+.btn-active {
+  background-color: red;
+}
+
+.btn-inactive {
+  background-color: transparent;
+}
