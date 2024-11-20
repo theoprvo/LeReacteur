@@ -1,0 +1,19 @@
+.offer {
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px;
+}
+
+.offer-pictures {
+  img {
+    width: 200px;
+    height: auto;
+  }
+}
+
+.offer-details {
+  height: 100%;
+  background-color: aqua;
+}
