@@ -28,6 +28,7 @@ const Offfer = () => {
   ) : (
     <div className="offer">
       <div className="offer-pictures">
+        {console.log(data.product_pictures[0].url)}
         <img src={data.product_pictures[0].url} alt="" />
       </div>
       <div className="offer-details">
@@ -47,26 +48,67 @@ const Offfer = () => {
           <p>{data.product_price} €</p>
         </div>
         <div className="offer-details-list">
-          <div className="offer-details-list__item">
-            <div>MARQUE</div>
-            <div>{data.product_details[0]["MARQUE"]}</div>
-          </div>
-          <div className="offer-details-list__item">
-            <div>ÉTAT</div>
-            <div>{data.product_details[2]["ÉTAT"]}</div>
-          </div>
-          <div className="offer-details-list__item">
-            <div>COULEUR</div>
-            <div>{data.product_details[3]["COULEUR"]}</div>
-          </div>
-          <div className="offer-details-list__item">
-            <div>LOCALISATION</div>
-            <div>{data.product_details[4]["EMPLACEMENT"]}</div>
-          </div>
-          <div className="offer-details-list__item">
-            <div>MODES DE PAIEMENT</div>
-            <div>{data.product_details[5]["MODE DE PAIEMENT"]}</div>
-          </div>
+          {data.product_details.map((item, index) => {
+            return (
+              <div key={index} className="offer-details-list__item">
+                {item["MARQUE"] ? (
+                  <>
+                    <div>MARQUE</div>
+                    <div>{item["MARQUE"]}</div>
+                  </>
+                ) : (
+                  <>
+                    <div>MARQUE</div>
+                    <div>N/A</div>
+                  </>
+                )}
+                {item["ÉTAT"] ? (
+                  <>
+                    <div>ÉTAT</div>
+                    <div>{item["ÉTAT"]}</div>
+                  </>
+                ) : (
+                  <>
+                    <div>ÉTAT</div>
+                    <div>N/A</div>
+                  </>
+                )}
+                {item["COULEUR"] ? (
+                  <>
+                    <div>COULEUR</div>
+                    <div>{item["COULEUR"]}</div>
+                  </>
+                ) : (
+                  <>
+                    <div>COULEUR</div>
+                    <div>N/A</div>
+                  </>
+                )}
+                {item["EMPLACEMENT"] ? (
+                  <>
+                    <div>LOCALISATION</div>
+                    <div>{item["EMPLACEMENT"]}</div>
+                  </>
+                ) : (
+                  <>
+                    <div>LOCALISATION</div>
+                    <div>N/A</div>
+                  </>
+                )}
+                {item["MODES DE PAIEMENT"] ? (
+                  <>
+                    <div>OPTIONS DE PAIEMENT</div>
+                    <div>{item["MODES DE PAIEMENT"]}</div>
+                  </>
+                ) : (
+                  <>
+                    <div>OPTIONS DE PAIEMENT</div>
+                    <div>N/A</div>
+                  </>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

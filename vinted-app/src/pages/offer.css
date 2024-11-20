@@ -15,5 +15,13 @@
 
 .offer-details {
   height: 100%;
-  background-color: aqua;
+  padding: 20px;
+  border-radius: 4px;
+
+  color: #757575;
+  background-color: #ffffff;
+
+  .offer-details-list {
+    border-top: solid 1px #f2f2f2;
+  }
 }
