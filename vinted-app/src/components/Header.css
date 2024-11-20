@@ -1,0 +1,8 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  background-color: azure;
+  border-bottom: solid 1px rgb(225, 225, 225);
+}

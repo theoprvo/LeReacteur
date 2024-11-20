@@ -1,0 +1,12 @@
+.item-div {
+  width: 20%;
+
+  div {
+    padding: 0 8px;
+    img {
+      height: 350px;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
