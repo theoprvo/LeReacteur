@@ -1,3 +1,4 @@
+[FRONT]
 Pages :
 -Home => /
 -Personnage => Liste des persos (ie : LoL)
@@ -9,7 +10,9 @@ Pages :
 
 Components :
 -Header
+-Footer
 
+[BACK]
 Routes :
 -Recuperer tt les persos (API)
 -Recuperer un perso par ID (API)
@@ -18,4 +21,9 @@ Routes :
 -Recuperer un comics par ID (API)
 -Recuperer un comics avec la clef etrangere (API)
 
--C
+-Enregistrer un utilisateur (DB)
+-Recuperer un utilisateur via son email (DB)
+-Enregistrer l'ID d'un comics favoris dans le user (DB)
+
+
+/// Auto complétion dans la recherche
