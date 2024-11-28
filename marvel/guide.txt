@@ -1,0 +1,21 @@
+Pages :
+-Home => /
+-Personnage => Liste des persos (ie : LoL)
+-UnPersonnage => Infos + comics liés
+-Comics => Liste des comics A-Z
+-UnComics => /
+-Login / SignUp => 
+-Profile => voir les favoris + infos utilisateur
+
+Components :
+-Header
+
+Routes :
+-Recuperer tt les persos (API)
+-Recuperer un perso par ID (API)
+
+-Recuperer tt les comics (API)
+-Recuperer un comics par ID (API)
+-Recuperer un comics avec la clef etrangere (API)
+
+-C
