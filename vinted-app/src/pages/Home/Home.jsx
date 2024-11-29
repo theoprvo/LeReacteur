@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import "./Home.css";
-import Item from "../components/item/Item";
+import "./home.css";
+import Item from "../../components/Item/Item";
 
 const Home = () => {
   const [data, setData] = useState();
@@ -25,7 +25,7 @@ const Home = () => {
   return isLoading ? (
     <span>La page charge</span>
   ) : (
-    <>
+    <div className="">
       <section className="home-section-1">
         <div>
           <div className="toto">
@@ -35,24 +35,26 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="home-section-2">
-        {data.offers.map((item) => {
-          console.log(item);
+      <div className="d-flex justify-content-center">
+        <section className="home-section-2 container">
+          {data.offers.map((item) => {
+            console.log(item);
 
-          return (
-            <Item
-              key={item._id}
-              image={item.product_image.secure_url}
-              username={item.owner.account.username}
-              brand={item.product_details[0].MARQUE}
-              size={item.product_details[1].TAILLE}
-              price={item.product_price}
-              item_id={item._id}
-            />
-          );
-        })}
-      </section>
-    </>
+            return (
+              <Item
+                key={item._id}
+                image={item.product_image.secure_url}
+                username={item.owner.account.username}
+                brand={item.product_details[0].MARQUE}
+                size={item.product_details[1].TAILLE}
+                price={item.product_price}
+                item_id={item._id}
+              />
+            );
+          })}
+        </section>
+      </div>
+    </div>
   );
 };
 

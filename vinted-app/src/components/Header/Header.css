@@ -1,0 +1,42 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between !important;
+
+  padding: 4px 20px !important;
+
+  border-bottom: solid 1px rgb(225, 225, 225);
+
+  img {
+    height: 42.23px;
+    width: auto;
+  }
+
+  .searchbar {
+    color: rgb(var(--greyscale-level-2));
+    background-color: rgb(var(--greyscale-level-6));
+    width: 100%;
+    padding: 0.4rem 0;
+
+    div {
+      padding: 0 1.6rem;
+      font-size: 1.4rem;
+    }
+
+    input {
+      height: 30px;
+      width: 100%;
+      background-color: transparent;
+      font-family: "V-Reg";
+      font-size: 1.6rem;
+      border: none;
+    }
+    input:focus {
+      border: none !important;
+    }
+  }
+}
+
+.margin {
+  margin-right: 48px;
+}

@@ -21,7 +21,7 @@ const Offfer = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [id]);
 
   return isLoading ? (
     <div>chargement</div>

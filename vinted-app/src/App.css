@@ -1,0 +1,56 @@
+/* IMPORTED FONTS (from the vinted website) */
+@font-face {
+  font-family: "V-Reg";
+  src: url("./assets/fonts/V-Inter-Regular.woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "V-Med";
+  src: url("./assets/fonts/V-Inter-Medium.woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* GLOBAL STYLE */
+:root {
+  font-size: 62.5%;
+  --greyscale-level-1: 23, 23, 23;
+  --greyscale-level-2: 77, 77, 77;
+  --greyscale-level-3: 117, 117, 117;
+  --greyscale-level-4: 153, 153, 153;
+  --greyscale-level-5: 201, 201, 201;
+  --greyscale-level-6: 242, 242, 242;
+  --greyscale-level-7: 255, 255, 255;
+}
+
+body {
+  line-height: 1.25;
+  font-family: "V-Reg";
+}
+
+/* CUSTOM CLASSES */
+
+.font-v-reg {
+  font-family: "V-Reg";
+}
+.font-v-med {
+  font-family: "V-Med";
+}
+.container {
+  width: 1240px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+}
+.d-flex {
+  display: flex;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.align-items-center {
+  align-items: center;
+}
