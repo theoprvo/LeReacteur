@@ -14,16 +14,16 @@ Components :
 
 [BACK]
 Routes :
--Recuperer tt les persos (API)
--Recuperer un perso par ID (API)
+X-Recuperer tt les persos (API)
+X-Recuperer un perso par ID (API)
 
--Recuperer tt les comics (API)
--Recuperer un comics par ID (API)
+X-Recuperer tt les comics (API)
+X-Recuperer un comics par ID (API)
 -Recuperer un comics avec la clef etrangere (API)
 
--Enregistrer un utilisateur (DB)
--Recuperer un utilisateur via son email (DB)
--Enregistrer l'ID d'un comics favoris dans le user (DB)
+X-Enregistrer un utilisateur (DB) -> User
+X-Verifier un utilisateur via son email (DB) -> User
+-Enregistrer l'ID d'un comics favoris dans le user (DB) -> Favorites?
 
 
 /// Auto complétion dans la recherche

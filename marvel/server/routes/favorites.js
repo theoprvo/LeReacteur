@@ -1,0 +1,51 @@
+const express = require("express");
+const router = express.Router();
+
+const User = require("../models/User");
+const Favorites = require("../models/Favorites");
+
+router.post("/favorite", async (req, res) => {
+  try {
+    console.log(req.body);
+
+    const user = await User.findOne({ token: req.body.token });
+
+    console.log(user);
+
+    const newFavorites = new Favorites({
+      user: user,
+      type: req.body.type,
+      marvelId: req.body.marvelId,
+    });
+    await newFavorites.save();
+    console.log(newFavorites);
+    return res.status(201).json(newFavorites);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+router.delete("/favorite/:id", async (req, res) => {
+  try {
+    console.log("bien recu");
+    console.log(req.params.id);
+
+    await Favorites.findByIdAndDelete(req.params.id);
+    return res.status(201).json({ message: "deleted" });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+router.get("/favorites/:token", async (req, res) => {
+  try {
+    const user = await User.findOne({ token: req.params.token });
+
+    const response = await Favorites.find({ user: user });
+    return res.status(200).json(response);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+module.exports = router;
