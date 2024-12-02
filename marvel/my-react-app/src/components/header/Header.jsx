@@ -28,7 +28,10 @@ const Header = ({ token, setUser }) => {
           <ul>
             <li className="padding">
               <Link to="/">
-                <img src="src\assets\img\marvel-logo.svg" alt="" />
+                <img
+                  src="https://res.cloudinary.com/dwe3psc5x/image/upload/v1733135119/marvel-logo_okjesb.svg"
+                  alt=""
+                />
               </Link>
             </li>
             <li className="padding link-menu">

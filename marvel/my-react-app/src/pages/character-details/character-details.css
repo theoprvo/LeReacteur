@@ -33,5 +33,22 @@
   }
 }
 
-.appearance-detail {
+.appearance-section {
+  margin-top: 60px;
+  h2 {
+    font-size: 3rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--primary-level-1);
+  }
+
+  .appearance-detail {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }

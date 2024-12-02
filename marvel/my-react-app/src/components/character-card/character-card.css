@@ -1,6 +1,6 @@
 .container-item-card {
   width: 15%;
-  margin: 20px;
+  margin: 14px 28px;
 
   .character-card {
     display: flex;
@@ -32,7 +32,7 @@
   }
 }
 
-.container-item-card:hover {
+.hover-effect-character-card:hover {
   opacity: 1;
   color: var(--secondary-level-1);
   transform: scale(1.1);

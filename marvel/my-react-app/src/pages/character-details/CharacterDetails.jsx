@@ -55,8 +55,8 @@ const CharacterDetails = ({ token }) => {
     <>2sec</>
   ) : (
     <>
-      <section className="container">
-        <div className="page-detail">
+      <div className="container">
+        <section className="page-detail">
           <div className="page-detail-image-container">
             <img
               src={`${data.thumbnail.path}/portrait_incredible.${data.thumbnail.extension}`}
@@ -68,6 +68,12 @@ const CharacterDetails = ({ token }) => {
               <h1>{data.name}</h1>
               {console.log(dataFavorite)}
               {test(dataFavorite, data)}
+              <div className="fav-btn">
+                <span
+                  href=""
+                  className="favme dashicons dashicons-heart"
+                ></span>
+              </div>
 
               {!dataFavorite && (
                 <button
@@ -96,23 +102,24 @@ const CharacterDetails = ({ token }) => {
               <p>No description</p>
             )}
           </div>
-        </div>
+        </section>
 
-        <div className="appearance-detail">
-          {/* {console.log(data)} */}
-          {/* {console.log(data2)} */}
-          {data.comics.map((item, index) => {
-            return (
-              <ComicsRelated
-                key={index}
-                name={item.title}
-                img_url={item.thumbnail.path}
-                img_extension={item.thumbnail.extension}
-              />
-            );
-          })}
-        </div>
-      </section>
+        <section className="appearance-section">
+          <h2>Appear in</h2>
+          <div className="appearance-detail">
+            {data.comics.map((item, index) => {
+              return (
+                <ComicsRelated
+                  key={index}
+                  name={item.title}
+                  img_url={item.thumbnail.path}
+                  img_extension={item.thumbnail.extension}
+                />
+              );
+            })}
+          </div>
+        </section>
+      </div>
     </>
   );
 };

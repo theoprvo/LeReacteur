@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const CharacterCard = (props) => {
   return (
     <>
-      <div className="container-item-card">
+      <div className="container-item-card hover-effect-character-card">
         <Link to={`/character/${props._id}`} className="character-card">
           <div>
             <img

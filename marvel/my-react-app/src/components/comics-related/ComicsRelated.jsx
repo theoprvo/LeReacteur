@@ -5,12 +5,15 @@ const ComicsRelated = (props) => {
   return (
     <>
       <div className="container-item-card">
-        <Link to="/" className="character-card">
-          <h2>{props.name}</h2>
-          <img
-            src={`${props.img_url}/portrait_incredible.${props.img_extension}`}
-            alt=""
-          />
+        <Link to="/" className="character-card comics-related-hover">
+          <div>
+            <img
+              className="item-img"
+              src={`${props.img_url}/portrait_incredible.${props.img_extension}`}
+              alt=""
+            />
+          </div>
+          <div>{props.name}</div>
         </Link>
       </div>
     </>

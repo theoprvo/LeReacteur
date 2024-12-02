@@ -26,4 +26,5 @@ X-Verifier un utilisateur via son email (DB) -> User
 -Enregistrer l'ID d'un comics favoris dans le user (DB) -> Favorites?
 
 
-/// Auto complétion dans la recherche
+- Pagination
+- Favoris
