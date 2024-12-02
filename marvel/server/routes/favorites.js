@@ -38,6 +38,30 @@ router.delete("/favorite/:id", async (req, res) => {
   }
 });
 
+router.get("/favorite/check", async (req, res) => {
+  const { userToken, marvelId } = req.query;
+  console.log(userToken, " | ", marvelId);
+
+  try {
+    const user = await User.findOne({ token: userToken });
+    console.log(user);
+    const favorite = await Favorites.findOne({
+      user: user,
+      marvelId: marvelId,
+    });
+    console.log(favorite);
+    if (favorite) {
+      return res
+        .status(200)
+        .json({ isFavorite: true, favoriteId: favorite._id });
+    } else {
+      return res.status(200).json({ isFavorite: false });
+    }
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
 router.get("/favorites/:token", async (req, res) => {
   try {
     const user = await User.findOne({ token: req.params.token });

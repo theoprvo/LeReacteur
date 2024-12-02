@@ -16,39 +16,31 @@ const CharacterDetails = ({ token }) => {
       const response = await axios.get(`http://localhost:3000/comics/${id}`);
       setData(response.data);
       //DATA OF FAVORITES OF USER
-      const responseFavorite = await axios.get(
-        `http://localhost:3000/favorites/${token}`
+      const responseFavoriteCheck = await axios.get(
+        `http://localhost:3000/favorite/check`,
+        { params: { userToken: token, marvelId: id } }
       );
-      setDataFavorite(responseFavorite.data);
+      setDataFavorite({ ...responseFavoriteCheck.data });
       setIsLoading(false);
     };
     fetchData();
   }, [id, token]);
 
-  const test = (x, y) => {
-    console.log("on lance la fonction qui test si le chara est deja en fav");
-    for (let index = 0; index < x.length; index++) {
-      if (x[index].marvelId === y._id) {
-        return setDataFavorite(x[index]);
-      }
-      console.log("pas dans les favoris");
-      return setDataFavorite(false);
-    }
-  };
-
-  function refreshPage() {
-    window.location.reload(false);
-  }
-
   const addFavorite = async () => {
-    await axios.post(`http://localhost:3000/favorite`, {
+    const response = await axios.post(`http://localhost:3000/favorite`, {
       token: token,
       type: "character",
       marvelId: id,
     });
+    setDataFavorite({ isFavorite: true, favoriteId: response.data._id });
+    console.log(dataFavorite);
   };
   const removeFavorite = async () => {
-    await axios.delete(`http://localhost:3000/favorite/${dataFavorite._id}`);
+    await axios.delete(
+      `http://localhost:3000/favorite/${dataFavorite.favoriteId}`
+    );
+    setDataFavorite({ isFavorite: false });
+    console.log(dataFavorite);
   };
 
   return isLoading ? (
@@ -66,8 +58,6 @@ const CharacterDetails = ({ token }) => {
           <div className="page-detail-text-container">
             <div className="headline">
               <h1>{data.name}</h1>
-              {console.log(dataFavorite)}
-              {test(dataFavorite, data)}
               <div className="fav-btn">
                 <span
                   href=""
@@ -75,24 +65,21 @@ const CharacterDetails = ({ token }) => {
                 ></span>
               </div>
 
-              {!dataFavorite && (
+              {dataFavorite.isFavorite === false ? (
                 <button
-                  onClick={() => {
-                    addFavorite();
-                    refreshPage();
+                  onClick={async () => {
+                    await addFavorite();
                   }}
                 >
                   Add to favorites
                 </button>
-              )}
-              {dataFavorite && (
+              ) : (
                 <button
-                  onClick={() => {
-                    removeFavorite();
-                    refreshPage();
+                  onClick={async () => {
+                    await removeFavorite();
                   }}
                 >
-                  Remove from favorites
+                  Remove from favorites {dataFavorite.favoriteId}
                 </button>
               )}
             </div>

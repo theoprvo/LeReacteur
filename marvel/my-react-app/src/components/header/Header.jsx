@@ -6,6 +6,7 @@ import "./header.css";
 const Header = ({ token, setUser }) => {
   const [dataUser, setDataUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     const fetchData = async () => {
       if (token) {
@@ -13,6 +14,8 @@ const Header = ({ token, setUser }) => {
           `http://localhost:3000/user/${token}`
         );
         setDataUser(responseUser.data);
+        setIsLoading(false);
+      } else {
         setIsLoading(false);
       }
     };
@@ -45,7 +48,9 @@ const Header = ({ token, setUser }) => {
               </Link>
             </li>
 
-            {token ? (
+            {/* {console.log(dataUser)} */}
+
+            {dataUser && dataUser.account ? (
               <li className="padding signout">
                 <div className="roboto-medium">{dataUser.account.username}</div>
                 <button
