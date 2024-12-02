@@ -3,6 +3,7 @@ const router = express.Router();
 
 const User = require("../models/User");
 const Favorites = require("../models/Favorites");
+const e = require("express");
 
 router.post("/favorite", async (req, res) => {
   try {
@@ -40,9 +41,16 @@ router.delete("/favorite/:id", async (req, res) => {
 router.get("/favorites/:token", async (req, res) => {
   try {
     const user = await User.findOne({ token: req.params.token });
+    console.log(user);
 
     const response = await Favorites.find({ user: user });
-    return res.status(200).json(response);
+    console.log(response);
+
+    if (response.length === 0) {
+      return res.status(200).json([{ exist: false }]);
+    } else {
+      return res.status(200).json(response);
+    }
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

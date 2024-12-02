@@ -28,7 +28,7 @@ const Home = ({ token }) => {
     ) : (
       <div>
         {console.log(dataUser)}
-        {console.log(dataFavorites)}
+        {/* {console.log(dataFavorites)} */}
 
         <h1>Bonjour {dataUser.account.username} !</h1>
 

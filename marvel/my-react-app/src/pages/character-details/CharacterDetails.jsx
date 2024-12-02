@@ -25,6 +25,21 @@ const CharacterDetails = ({ token }) => {
     fetchData();
   }, [id, token]);
 
+  const test = (x, y) => {
+    console.log("on lance la fonction qui test si le chara est deja en fav");
+    for (let index = 0; index < x.length; index++) {
+      if (x[index].marvelId === y._id) {
+        return setDataFavorite(x[index]);
+      }
+      console.log("pas dans les favoris");
+      return setDataFavorite(false);
+    }
+  };
+
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
   const addFavorite = async () => {
     await axios.post(`http://localhost:3000/favorite`, {
       token: token,
@@ -32,19 +47,14 @@ const CharacterDetails = ({ token }) => {
       marvelId: id,
     });
   };
-  // const removeFavorite = async () => {
-  //   await axios.delete(`http://localhost:3000/favorite/${data3._id}`);
-  // };
+  const removeFavorite = async () => {
+    await axios.delete(`http://localhost:3000/favorite/${dataFavorite._id}`);
+  };
 
   return isLoading ? (
     <>2sec</>
   ) : (
     <>
-      {/* {dataFavorite.map((item) => {
-        data._id === item._id
-          ? setDataFavorite(item)
-          : setDataFavorite({ notFavorite: true });
-      })} */}
       <section className="container">
         <div className="page-detail">
           <div className="page-detail-image-container">
@@ -56,10 +66,29 @@ const CharacterDetails = ({ token }) => {
           <div className="page-detail-text-container">
             <div className="headline">
               <h1>{data.name}</h1>
-              {console.log(data)}
               {console.log(dataFavorite)}
-              <button onClick={addFavorite}>Add to favorites</button>
-              {/* <button onClick={removeFavorite}>Remove from favorites</button> */}
+              {test(dataFavorite, data)}
+
+              {!dataFavorite && (
+                <button
+                  onClick={() => {
+                    addFavorite();
+                    refreshPage();
+                  }}
+                >
+                  Add to favorites
+                </button>
+              )}
+              {dataFavorite && (
+                <button
+                  onClick={() => {
+                    removeFavorite();
+                    refreshPage();
+                  }}
+                >
+                  Remove from favorites
+                </button>
+              )}
             </div>
             {data.description ? (
               <p>{data.description}</p>
