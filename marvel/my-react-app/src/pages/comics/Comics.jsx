@@ -3,8 +3,7 @@ import "./comics.css";
 import axios from "axios";
 import { TailSpin } from "react-loader-spinner";
 import { useEffect, useState } from "react";
-// import ComicCard from "../../components/comic-card/ComicCard";
-import CharacterCard from "../../components/character-card/CharacterCard";
+import ComicCard from "../../components/comic-card/ComicCard";
 
 const Comics = () => {
   const [data, setData] = useState({ results: [] });
@@ -82,10 +81,10 @@ const Comics = () => {
         <div className="items-container">
           {console.log(data)}
           {data.results.map((item) => (
-            <CharacterCard
+            <ComicCard
               key={item._id}
               _id={item._id}
-              name={item.name}
+              name={item.title}
               img_url={item.thumbnail.path}
               img_extension={item.thumbnail.extension}
             />

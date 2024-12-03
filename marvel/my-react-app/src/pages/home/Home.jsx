@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import CharacterFavorite from "../../components/test";
 
 const Home = ({ token }) => {
   const [dataUser, setDataUser] = useState({});
@@ -27,19 +28,18 @@ const Home = ({ token }) => {
       <div>chargement</div>
     ) : (
       <div>
-        {console.log(dataUser)}
-        {/* {console.log(dataFavorites)} */}
-
         <h1>Bonjour {dataUser.account.username} !</h1>
 
         <div className="favorites characters">
           <h2>Your Favorites characters</h2>
-          {dataFavorites.map((item, index) => {
+          {dataFavorites.map((item) => {
             if (item.type === "character") {
               return (
-                <div key={index}>
-                  {item.type} + {item.marvelId}
-                </div>
+                <CharacterFavorite
+                  key={item._id}
+                  id={item.marvelId}
+                  token={token}
+                />
               );
             }
           })}
@@ -47,7 +47,7 @@ const Home = ({ token }) => {
         <div className="favorites comics">
           <h2>Your Favorites comics</h2>
           {dataFavorites.map((item, index) => {
-            if (item.type === "comics") {
+            if (item.type === "comic") {
               return (
                 <div key={index}>
                   {item.type} + {item.marvelId}

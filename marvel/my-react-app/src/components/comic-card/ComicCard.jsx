@@ -4,19 +4,18 @@ import { Link } from "react-router-dom";
 const ComicCard = (props) => {
   return (
     <>
-      <Link to={`/comic/${props._id}`} className="character-card">
-        <div>
+      <div className="container-item-card hover-effect-character-card">
+        <Link to={`/comic/${props._id}`} className="character-card">
           <div>
             <img
-              src={`${props.img_url}/portrait_xlarge.${props.img_extension}`}
+              className="item-img"
+              src={`${props.img_url}/portrait_incredible.${props.img_extension}`}
               alt={`${props.name}-image`}
             />
           </div>
-          <div>
-            <div>{props.name}</div>
-          </div>
-        </div>
-      </Link>
+          <div className="item-txt">{props.name}</div>
+        </Link>
+      </div>
     </>
   );
 };

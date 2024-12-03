@@ -37,7 +37,7 @@ function App() {
           element={<CharacterDetails token={token} />}
         />
         <Route path="/comics" element={<Comics />} />
-        <Route path="/comic/:id" element={<ComicDetails />} />
+        <Route path="/comic/:id" element={<ComicDetails token={token} />} />
         <Route
           path="/signup"
           element={<Signup setUser={setUser} token={token} />}
