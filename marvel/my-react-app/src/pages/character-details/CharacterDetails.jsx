@@ -79,7 +79,7 @@ const CharacterDetails = ({ token }) => {
                     await removeFavorite();
                   }}
                 >
-                  Remove from favorites {dataFavorite.favoriteId}
+                  Remove from favorites
                 </button>
               )}
             </div>

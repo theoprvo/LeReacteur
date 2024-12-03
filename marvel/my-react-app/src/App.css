@@ -95,3 +95,9 @@ body {
 }
 
 /* CUSTOM CLASSES */
+
+.loader-spinner {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}

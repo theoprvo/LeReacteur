@@ -32,13 +32,28 @@ const Home = ({ token }) => {
 
         <h1>Bonjour {dataUser.account.username} !</h1>
 
-        <div className="favorites">
+        <div className="favorites characters">
+          <h2>Your Favorites characters</h2>
           {dataFavorites.map((item, index) => {
-            return (
-              <div key={index}>
-                {item.type} + {item.marvelId}
-              </div>
-            );
+            if (item.type === "character") {
+              return (
+                <div key={index}>
+                  {item.type} + {item.marvelId}
+                </div>
+              );
+            }
+          })}
+        </div>
+        <div className="favorites comics">
+          <h2>Your Favorites comics</h2>
+          {dataFavorites.map((item, index) => {
+            if (item.type === "comics") {
+              return (
+                <div key={index}>
+                  {item.type} + {item.marvelId}
+                </div>
+              );
+            }
           })}
         </div>
       </div>

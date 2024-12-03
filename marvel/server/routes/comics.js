@@ -7,9 +7,15 @@ const User = require("../models/User");
 const { default: axios } = require("axios");
 
 router.get("/comics", async (req, res) => {
+  let { limit, skip, filter } = req.query;
   try {
+    if (filter) {
+      filter = `&title=${filter}`;
+    } else {
+      filter = "";
+    }
     const response = await axios.get(
-      `https://lereacteur-marvel-api.herokuapp.com/comics?apiKey=${API_KEY}`
+      `https://lereacteur-marvel-api.herokuapp.com/comics?apiKey=${API_KEY}&limit=${limit}&skip=${skip}${filter}`
     );
     return res.status(200).json(response.data);
   } catch (error) {

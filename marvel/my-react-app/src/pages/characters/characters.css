@@ -55,6 +55,7 @@ section {
 
 .controls {
   display: flex;
+  justify-content: end;
   button {
     padding: 0 8px;
     margin: 0 16px;

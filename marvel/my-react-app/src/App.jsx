@@ -31,7 +31,7 @@ function App() {
       <Header setUser={setUser} token={token} />
       <Routes>
         <Route path="/" element={<Home setUser={setUser} token={token} />} />
-        <Route path="/characters/:limit?" element={<Characters />} />
+        <Route path="/characters/" element={<Characters />} />
         <Route
           path="/character/:id"
           element={<CharacterDetails token={token} />}
