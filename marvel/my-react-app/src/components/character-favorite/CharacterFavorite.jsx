@@ -9,7 +9,7 @@ const CharacterFavorite = ({ id, token }) => {
   useEffect(() => {
     const fetchData = async () => {
       //DATA OF CHARACTER
-      const response = await axios.get(`http://localhost:3000/comics/${id}`);
+      const response = await axios.get(`http://localhost:3000/character/${id}`);
       setData(response.data);
       //DATA OF FAVORITES OF USER
       const responseFavoriteCheck = await axios.get(

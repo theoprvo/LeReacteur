@@ -1,6 +1,8 @@
+import "./home.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import CharacterFavorite from "../../components/test";
+import CharacterFavorite from "../../components/character-favorite/CharacterFavorite";
+import ComicFavorite from "../../components/comic-favorite/ComicFavorite";
 
 const Home = ({ token }) => {
   const [dataUser, setDataUser] = useState({});
@@ -28,8 +30,10 @@ const Home = ({ token }) => {
       <div>chargement</div>
     ) : (
       <div>
-        <h1>Bonjour {dataUser.account.username} !</h1>
-
+        <div className="hero">
+          <div className="hero-mask"></div>
+          <h1>WELCOME {dataUser.account.username}</h1>
+        </div>
         <div className="favorites characters">
           <h2>Your Favorites characters</h2>
           {dataFavorites.map((item) => {
@@ -46,12 +50,14 @@ const Home = ({ token }) => {
         </div>
         <div className="favorites comics">
           <h2>Your Favorites comics</h2>
-          {dataFavorites.map((item, index) => {
+          {dataFavorites.map((item) => {
             if (item.type === "comic") {
               return (
-                <div key={index}>
-                  {item.type} + {item.marvelId}
-                </div>
+                <ComicFavorite
+                  key={item._id}
+                  id={item.marvelId}
+                  token={token}
+                />
               );
             }
           })}
