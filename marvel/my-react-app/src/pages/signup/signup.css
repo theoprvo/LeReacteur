@@ -2,7 +2,8 @@
   position: absolute;
   top: 0;
   z-index: 1;
-  background-color: var(--primary-level-1);
+  background-image: url("https://res.cloudinary.com/dwe3psc5x/image/upload/v1733274133/marvel-walp_n3xdb4.jpg");
+  background-size: cover;
   width: 100vw;
   height: 100vh;
 
@@ -27,7 +28,7 @@
     margin-inline: auto;
     padding: 3rem 5rem;
     border-radius: 16px;
-    border: solid 1px var(--gold);
+    border: solid 1px var(--primary-level-1);
     max-width: 600px;
   }
 

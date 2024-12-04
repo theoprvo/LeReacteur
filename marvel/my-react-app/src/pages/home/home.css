@@ -1,7 +1,6 @@
 .hero {
   background-image: url("https://res.cloudinary.com/dwe3psc5x/image/upload/v1733235484/marvel_wp_nwt7ld.jpg");
   background-size: cover;
-  background-color: red !important;
   height: 40vh;
 
   .hero-mask {
