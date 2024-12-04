@@ -39,6 +39,9 @@ const Signup = ({ setUser }) => {
   return (
     <>
       <div className="auth-background">
+        <div className="exit">
+          <Link to="/">X</Link>
+        </div>
         <div className="sign-up">
           <h1>Create an account</h1>
           <form action="" onSubmit={handleSubmit}>

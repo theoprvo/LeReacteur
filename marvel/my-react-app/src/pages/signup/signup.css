@@ -6,10 +6,24 @@
   width: 100vw;
   height: 100vh;
 
+  .exit {
+    display: flex;
+    justify-content: end;
+    a {
+      margin-right: 5rem;
+      margin-top: 5rem;
+      font-size: 5rem;
+      text-decoration: none;
+      font-family: "Roboto", sans-serif;
+      font-weight: 900;
+      color: var(--secondary-level-1);
+    }
+  }
+
   .sign-up {
     background-color: var(--secondary-level-1);
     color: var(--dark);
-    margin-top: 20vh;
+    margin-top: 15vh;
     margin-inline: auto;
     padding: 3rem 5rem;
     border-radius: 16px;
