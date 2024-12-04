@@ -58,29 +58,26 @@ const CharacterDetails = ({ token }) => {
           <div className="page-detail-text-container">
             <div className="headline">
               <h1>{data.name}</h1>
-              <div className="fav-btn">
-                <span
-                  href=""
-                  className="favme dashicons dashicons-heart"
-                ></span>
-              </div>
-
-              {dataFavorite.isFavorite === false ? (
-                <button
-                  onClick={async () => {
-                    await addFavorite();
-                  }}
-                >
-                  Add to favorites
-                </button>
-              ) : (
-                <button
-                  onClick={async () => {
-                    await removeFavorite();
-                  }}
-                >
-                  Remove from favorites
-                </button>
+              {token && (
+                <div>
+                  {dataFavorite.isFavorite === false ? (
+                    <button
+                      onClick={async () => {
+                        await addFavorite();
+                      }}
+                    >
+                      Add to favorites
+                    </button>
+                  ) : (
+                    <button
+                      onClick={async () => {
+                        await removeFavorite();
+                      }}
+                    >
+                      Remove from favorites
+                    </button>
+                  )}
+                </div>
               )}
             </div>
             {data.description ? (
