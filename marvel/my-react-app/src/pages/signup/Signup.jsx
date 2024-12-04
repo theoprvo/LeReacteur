@@ -38,11 +38,11 @@ const Signup = ({ setUser }) => {
 
   return (
     <>
-      <div className="toto">
+      <div className="auth-background">
         <div className="sign-up">
-          <h2>Create an account</h2>
+          <h1>Create an account</h1>
           <form action="" onSubmit={handleSubmit}>
-            <div>
+            <div className="d-flex-col">
               <label htmlFor="">What's your email?</label>
               <input
                 onChange={(event) => {
@@ -56,7 +56,7 @@ const Signup = ({ setUser }) => {
               />
               <span>{errorMessage}</span>
             </div>
-            <div>
+            <div className="d-flex-col">
               <label htmlFor="">Choose a username</label>
               <input
                 onChange={(event) => {
@@ -68,7 +68,7 @@ const Signup = ({ setUser }) => {
                 placeholder="USERNAME"
               />
             </div>
-            <div>
+            <div className="d-flex-col">
               <label htmlFor="">Choose a password</label>
               <input
                 onChange={(event) => {
@@ -79,7 +79,9 @@ const Signup = ({ setUser }) => {
                 type="password"
                 placeholder="PASSWORD"
               />
-              <label htmlFor="">Confirm your password</label>
+            </div>
+            <div className="d-flex-col">
+              <label htmlFor="">Confirm your password</label>{" "}
               <input
                 onChange={(event) => {
                   setConfirmPassword(event.target.value);
@@ -90,15 +92,11 @@ const Signup = ({ setUser }) => {
                 placeholder="CONFIRM PASSWORD"
               />
             </div>
-            <div>
+            <div className="form-end">
               <button type="submit">Create account</button>
+              <Link to="/login">ALREADY HAVE AN ACCOUNT?</Link>
             </div>
           </form>
-          <div>
-            <span>
-              <Link to="/login">ALREADY HAVE AN ACCOUNT?</Link>
-            </span>
-          </div>
         </div>
       </div>
     </>

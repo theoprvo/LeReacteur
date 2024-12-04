@@ -1,5 +1,7 @@
+import "./character-favorite.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const CharacterFavorite = ({ id, token }) => {
   const [data, setData] = useState({});
@@ -34,28 +36,28 @@ const CharacterFavorite = ({ id, token }) => {
     <div>Loading...</div>
   ) : (
     <>
-      {console.log(data, dataFavorite.isFavorite)}
       {dataFavorite.isFavorite === true && (
-        <div>
-          <div className="container-item-card hover-effect-character-card">
-            <div className="character-card">
-              <div>
-                <img
-                  className="item-img"
-                  src={`${data.thumbnail.path}/standard_incredible.${data.thumbnail.extension}`}
-                  alt={`${data.name}-image`}
-                />
-              </div>
-              <div className="item-txt">{data.name}</div>
-            </div>
-          </div>
-          <button
-            onClick={async () => {
-              await removeFavorite();
-            }}
+        <div className="container-favorite">
+          <Link
+            to={`/character/${data._id}`}
+            className="container-favorite-img"
           >
-            Remove from favorites
-          </button>
+            <img
+              className=""
+              src={`${data.thumbnail.path}/standard_incredible.${data.thumbnail.extension}`}
+              alt={`${data.name}-image`}
+            />
+          </Link>
+          <div className="container-favorite-txt">
+            <h3 className="item-txt">{data.name}</h3>
+            <button
+              onClick={async () => {
+                await removeFavorite();
+              }}
+            >
+              remove
+            </button>
+          </div>
         </div>
       )}
     </>

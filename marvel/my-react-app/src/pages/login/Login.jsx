@@ -40,11 +40,11 @@ const Login = ({ setUser }) => {
 
   return (
     <>
-      <div className="toto">
+      <div className="auth-background">
         <div className="sign-up">
-          <h2>Sign in</h2>
+          <h1>Sign in</h1>
           <form action="" onSubmit={handleSubmit}>
-            <div>
+            <div className="d-flex-col">
               <label htmlFor="">EMAIL</label>
               <input
                 onChange={(event) => {
@@ -57,7 +57,7 @@ const Login = ({ setUser }) => {
                 placeholder="EMAIL"
               />
             </div>
-            <div>
+            <div className="d-flex-col">
               <label htmlFor="">PASSWORD</label>
               <input
                 onChange={(event) => {
@@ -74,18 +74,12 @@ const Login = ({ setUser }) => {
             {isLoading ? (
               <Loader color="#2CB1BA" height={40} width={40} />
             ) : (
-              <div>
-                <button disabled={isLoading ? true : false} type="submit">
-                  Se connecter
-                </button>
+              <div className="form-end">
+                <button type="submit">Log in</button>
+                <Link to="/signup">CREATE ACCOUNT</Link>
               </div>
             )}
           </form>
-          <div>
-            <span>
-              <Link to="/singup">CREATE ACCOUNT</Link>
-            </span>
-          </div>
         </div>
       </div>
     </>
